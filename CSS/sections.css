@@ -1,0 +1,126 @@
+/* Solved Papers */
+
+#papers {
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.syllabus-table thead th {
+    text-align: center;
+}
+
+.syllabus-table {
+    margin: 4rem 0;
+}
+
+.papers-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Assignments */
+#assignments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem 0;
+}
+
+.assignments-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.assignments-box {
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(145, 2, 192, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(145, 2, 192, 1);
+    transition: all .4s ease;
+    cursor: pointer;
+    width: 300px;
+    position: relative;
+    margin: 2.5rem 1.5rem;
+}
+.assignments-box::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: var(--dark-violet);
+    opacity: 1;
+    border-radius: 1rem;
+    z-index: -1;
+    transition: all .4s ease;
+    transform: scale(1);
+    bottom: 0;
+    left: 0;
+}
+.assignments-box::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scale(1);
+    transition: all .4s ease;
+    border-radius: 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(145, 2, 192, 1);
+    opacity: 0;
+}
+.assignments-box:hover::before{
+    transform: scale(1.1);
+    opacity: 1;
+}
+.assignments-box:hover{
+    color: #fff;
+}
+.assignments-box:hover::after{
+    transform: scale(1);
+    height: 100%;
+}
+.assignments-box h1{
+    height: 60px;
+    font-size: 2.rem;
+}
+.assignments-box p{
+    margin: 2rem 0;
+    font-size: 1.7rem;
+}
+.assignments-box:hover{
+    background-position:right ;
+}
+.manual-btn:hover {
+    background-color: var(--midnight-blue);
+}
+
+@media screen and (max-width:768px) {
+    .assignments-box{
+        background: rgba(145, 2, 192, 0.22);
+        border-radius: 1rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: 1px solid rgba(145, 2, 192, 1);
+    }
+}

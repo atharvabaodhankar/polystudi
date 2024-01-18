@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PolyStudi || Admin</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Baumans&family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik+Doodle+Shadow&display=swap");
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        font-family: "Poppins";
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: var(--dark-violet);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 0;
+      }
+
+      :root {
+        --midnight-blue: #342f76ff;
+        --black: #000002ff;
+        --r-violet: #1f002dff;
+        --black-2: #06000aff;
+        --dark-violet: #9102c0ff;
+        --white: #ffff;
+        --grey: #666666;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      p {
+        font-size: 1.6rem;
+      }
+      #form,
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+      }
+      .form-heading h1 {
+        text-align: center;
+        font-size: 4rem;
+        color: #fff;
+        margin-bottom: 3rem;
+      }
+      .form-main {
+        background: rgba(255, 255, 255, 0.25);
+        background-color: #ffffffac;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      #form-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 1rem;
+        padding: 4rem 3rem;
+        width: 500px;
+      }
+      #form-main label {
+        font-size: 2rem;
+        margin-right: 2rem;
+        margin: 1rem 0;
+      }
+      #form-main select {
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        font-size: 1.7rem;
+        border: 1px solid var(--dark-violet);
+      }
+      #form-main select option {
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+      .form-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 2rem 0;
+        width: 100%;
+      }
+      #assignment_name,
+      #form_link,
+      #userid,#user_pass{
+        border: none;
+        height: 50px;
+        border-radius: 1rem;
+        border: 1px solid var(--dark-violet);
+        font-size: 1.6rem;
+        padding: 0 2rem;
+        width: 100%;
+      }
+      input:focus,
+      select:focus {
+        outline: 2px solid var(--dark-violet);
+      }
+      #submitBtn {
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        border: 2px solid var(--white);
+        font-size: 2rem;
+        background-color: var(--dark-violet);
+        color: #fff;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      #submitBtn:hover {
+        background-color: var(--r-violet);
+      }
+      @media screen and (max-width: 650px) {
+        #form-main {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="form">
+      <div class="form-heading">
+        <h1>Submit Assignment</h1>
+      </div>
+      <div class="form-main" id="form-main">
+        <form action="#">
+          <div class="form-box">
+            <label for="section">Choose a Section:</label>
+            <select id="section" name="section">
+              <option hidden selected>Select One..</option>
+              <option value="cm2k">CM2K</option>
+              <option value="cm4i">CM4I</option>
+              <option value="cm3k">CM3K</option>
+            </select>
+          </div>
+          <div class="form-info form-box">
+            <label for="assignment_name"> Assignment Name : </label>
+            <input
+              type="text"
+              name="assignment_name"
+              id="assignment_name"
+              placeholder="Ex.AMS Assignment no 4"
+            />
+          </div>
+          <div class="form-link form-box">
+            <label for="form_link">Enter Google Drive Link : </label>
+            <input
+              type="url"
+              name=""
+              id="form_link"
+              placeholder="https://drive.google.com...."
+            />
+          </div>
+          <div class="form-user form-box">
+            <label for="userid">Your User Id : </label>
+            <input type="text" name="userid" id="userid" placeholder="Enter user ID" />
+            <label for="user_pass">User Password : </label>
+            <input type="password" name="user_pass" id="user_pass" placeholder="Enter Password" />
+          </div>
+          <input type="submit" id="submitBtn" />
+        </form>
+      </div>
+    </section>
+
+  </body>
+</html>
