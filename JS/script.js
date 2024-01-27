@@ -1,8 +1,39 @@
-var loader = document.querySelector(".loader-wrapper");
+// var loader = document.querySelector(".loader-wrapper");
 
-      window.addEventListener("load", function () {
-        loader.style.opacity = 0;
-        loader.style.visibility = "hidden";
+//       window.addEventListener("load", function () {
+//         loader.style.opacity = 0;
+//         loader.style.visibility = "hidden";
+// });
+var loaderAnimation = gsap.timeline();
+
+loaderAnimation.to(".loader-container", {
+  width: "auto",
+  duration: 0.7,
+  ease: "power2.inOut",
+});
+loaderAnimation.to(".loader-container h1", {
+  color: "white",
+});
+
+loaderAnimation.to(
+  ".loader-box",
+  {
+    y: "-100%",
+    stagger: 0.2,
+    delay: 1.2,
+  },
+  "start"
+);
+loaderAnimation.to(
+  ".loader-main",
+  {
+    opacity: 0,
+    delay: 1.2,
+  },
+  "start"
+);
+loaderAnimation.to(".loader-wrapper", {
+  x: "-100%",
 });
 
 // Scroll Navbar
@@ -43,39 +74,53 @@ Shery.makeMagnet(".magnet");
 
 // Hero page GSAP
 
-var heroAnimate = gsap.timeline();
+// var heroAnimate = gsap.timeline();
 setTimeout(function () {
   Shery.textAnimate(".hero-h1", {
     style: 2,
     y: 10,
-    delay: 2,
     duration: 2,
     ease: "cubic-bezier(0.13, 1, 0.320, 1)",
     multiplier: 0.1,
   });
-}, 1200);
+}, 2000);
 
-heroAnimate.from(".hero-div-main h3", {
-  x: -100,
-  delay: 0.4,
-  duration: 1.3,
-  opacity: 0,
-  stagger: 2,
-});
-heroAnimate.from(".hero-div-main p", {
-  y: 100,
-  duration: 1.4,
-  opacity: 0,
-  stagger: 2,
-});
+loaderAnimation.from(
+  ".heroShow-divs",
+  {
+    y: -100,
+    opacity: 0,
+    stagger: 0.4,
+    duration: 1,
+  },
+  "hero-start"
+);
 
-gsap.from(".heroShow-divs", {
+loaderAnimation.from(".nav-ul li", {
   y: -100,
-  opacity: 0,
   stagger: 0.2,
-  duration: 1,
-  delay: 1.4,
+  duration: 0.7,
 });
+
+loaderAnimation.from(
+  ".hero-div-main h3",
+  {
+    x: -100,
+    duration: 1.3,
+    opacity: 0,
+    stagger: 1.2,
+  },
+  "hero-start"
+);
+loaderAnimation.from(
+  ".hero-div-main p",
+  {
+    y: 100,
+    duration: 1.4,
+    opacity: 0,
+  },
+  "hero-start"
+);
 
 // Courses GSAP
 
@@ -194,13 +239,6 @@ MenuAnimateFix.add("(max-width: 500px)", () => {
   });
 });
 
-gsap.from(".nav-ul li", {
-  y: -100,
-  stagger: 0.2,
-  duration: 0.7,
-  delay: 1.8,
-});
-
 // Swiper JS
 
 var swiper = new Swiper(".slide-content", {
@@ -225,13 +263,11 @@ var swiper = new Swiper(".slide-content", {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 30,
-
     },
     650: {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 60,
-
     },
     1200: {
       slidesPerView: 3,
@@ -252,4 +288,3 @@ var swiper = new Swiper(".slide-content", {
     // dynamicBullets: true,
   },
 });
-
